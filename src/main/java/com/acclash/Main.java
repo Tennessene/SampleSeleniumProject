@@ -1,6 +1,7 @@
 package com.acclash;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
 
@@ -21,7 +22,9 @@ public class Main {
             String driverDir = "/usr/local/share/chromedriver-linux64/chromedriver";
             System.setProperty(driverProperty, driverDir);
 
-            ChromeDriver tDriver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("headless");
+            ChromeDriver tDriver = new ChromeDriver(options);
             String chromeDriverVersion = tDriver.getCapabilities().getBrowserVersion();
             System.out.println("Using built-in chromeDriver version " + chromeDriverVersion);
             tDriver.quit();
@@ -39,7 +42,9 @@ public class Main {
                 System.out.println("System not supported. Sorry!");
                 return false;
             }
-            ChromeDriver tDriver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("headless");
+            ChromeDriver tDriver = new ChromeDriver(options);
             String chromeDriverVersion = tDriver.getCapabilities().getBrowserVersion();
             System.out.println("Using provided chromeDriver version " + chromeDriverVersion);
             tDriver.quit();
