@@ -3,20 +3,8 @@ package com.acclash;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main {
-    private static final AtomicBoolean passwordFound = new AtomicBoolean(false);
-
-    static String email;
-
-    static int threads;
-
-    static int runner;
-
-    static int totalRunners;
-
-    static boolean parallel;
 
     public static void main(String[] args) {
         if (!checkDriver()) {

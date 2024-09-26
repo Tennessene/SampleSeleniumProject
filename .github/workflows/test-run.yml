@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test_strings:
+  test-run:
 
     runs-on: ubuntu-latest
 
